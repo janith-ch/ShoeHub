@@ -16,7 +16,7 @@
         </activity>
         <activity android:name=".feedback" />
         <activity android:name=".editshoedetails" />
-        <activity android:name=".cashualshoesadmin" />
+        <activity android:name=".admin.casual_shoes_admin" />
         <activity android:name=".formalshoe" />
         <activity android:name=".alterstok" />
         <activity android:name=".admin.adminprofile" />

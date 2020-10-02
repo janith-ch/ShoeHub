@@ -28,7 +28,7 @@ public class adminprofile extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     User userData;
     TextView email, username;
-    Button addcasual;
+    Button addcasual,stockbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +37,7 @@ public class adminprofile extends AppCompatActivity {
         email = findViewById(R.id.admin_email);
         username = findViewById(R.id.admin_username);
         addcasual = findViewById(R.id.admin_casual_button);
+        stockbtn = findViewById(R.id.admin_View_button);
 
 
         firebaseAuth = FirebaseAuth.getInstance();
@@ -65,6 +66,15 @@ public class adminprofile extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent = new Intent(adminprofile.this, add_casual_shoes.class);
+                startActivity(intent);
+            }
+        });
+
+        stockbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(adminprofile.this, casual_shoes_admin.class);
                 startActivity(intent);
             }
         });
