@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Shoe Hub</string>
+    <string name="textview">TextView</string>
+    <string name="invite_friend">Invite Friend</string>
+</resources>

@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.shoehub">
+
+    <application
+        android:allowBackup="true"
+        android:icon="@drawable/shoe1"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity android:name=".auth.userprofile"></activity>
+        <activity android:name=".casualshoes.add_casual_shoes">
+
+
+        </activity>
+        <activity android:name=".feedback" />
+        <activity android:name=".editshoedetails" />
+        <activity android:name=".cashualshoesadmin" />
+        <activity android:name=".formalshoe" />
+        <activity android:name=".alterstok" />
+        <activity android:name=".admin.adminprofile" />
+        <activity android:name=".cart" />
+        <activity android:name=".fotmalshoe" />
+        <activity android:name=".casualshoes.Casualshoes">
+<!--            <intent-filter>-->
+<!--                <action android:name="android.intent.action.MAIN" />-->
+
+
+<!--                <category android:name="android.intent.category.LAUNCHER" />-->
+<!--            </intent-filter>-->
+
+        </activity>
+        <activity android:name=".selectyourshoe" />
+        <activity android:name=".home" />
+        <activity android:name=".auth.Activity_Register" />
+        <activity android:name=".auth.LoginActivity" />
+        <activity android:name=".auth.MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+        </activity>
+    </application>
+
+</manifest>

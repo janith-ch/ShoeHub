@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "926917963183",
+    "firebase_url": "https://shoe-hub-14b30.firebaseio.com",
+    "project_id": "shoe-hub-14b30",
+    "storage_bucket": "shoe-hub-14b30.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:926917963183:android:d08484e8c9ad721cf5d35a",
+        "android_client_info": {
+          "package_name": "com.example.shoehub"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "926917963183-iuugkgt22jah4976loc2o7219la17h05.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCnQlFz2dquADUItoQR4G_yH4TWF3zPZPo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "926917963183-iuugkgt22jah4976loc2o7219la17h05.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
