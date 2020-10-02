@@ -1,4 +1,4 @@
-package com.example.shoehub.casualshoes;
+package com.example.shoehub.admin;
 
 import android.view.View;
 import android.widget.ImageView;
@@ -9,10 +9,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.shoehub.R;
 
-public class MyViewHolder extends RecyclerView.ViewHolder {
-   TextView textViewID,getTextViewName;
-   ImageView profilePic;
-    public MyViewHolder(@NonNull View itemView) {
+public class MyViewHolder2 extends RecyclerView.ViewHolder {
+    TextView textViewID,getTextViewName;
+    ImageView profilePic;
+    public MyViewHolder2(@NonNull View itemView) {
         super(itemView);
         textViewID=itemView.findViewById(R.id.AtextView1ID);
         getTextViewName=itemView.findViewById(R.id.AtextView2ID);

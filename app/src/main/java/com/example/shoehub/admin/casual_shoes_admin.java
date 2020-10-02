@@ -1,4 +1,20 @@
-package com.example.shoehub.casualshoes;
+package com.example.shoehub.admin;
+
+//import androidx.appcompat.app.AppCompatActivity;
+//
+//import android.os.Bundle;
+//
+//import com.example.shoehub.R;
+//
+//public class cashualshoesadmin extends AppCompatActivity {
+//
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_cashualshoesadmin);
+//    }
+//}
+
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -12,6 +28,7 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import com.example.shoehub.R;
 import com.example.shoehub.auth.userprofile;
+import com.example.shoehub.casualshoes.MyViewHolder;
 import com.example.shoehub.models.addshoes;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
@@ -19,19 +36,19 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
-public class Casualshoes extends AppCompatActivity {
+public class casual_shoes_admin extends AppCompatActivity {
 
     DatabaseReference ref;
     ImageView text1;
     private FirebaseRecyclerOptions<addshoes> options;
-    private FirebaseRecyclerAdapter<addshoes, MyViewHolder>adapter;
+    private FirebaseRecyclerAdapter<addshoes, MyViewHolder2>adapter;
     private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cashualshoe);
-         text1 = findViewById(R.id.casual_user_button);
+        setContentView(R.layout.activity_cashualshoesadmin);
+        text1 = findViewById(R.id.casual_user_button);
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -39,9 +56,9 @@ public class Casualshoes extends AppCompatActivity {
         ref = FirebaseDatabase.getInstance().getReference("member");
 
         options = new FirebaseRecyclerOptions.Builder<addshoes>().setQuery(ref,addshoes.class).build();
-        adapter= new FirebaseRecyclerAdapter<addshoes, MyViewHolder>(options) {
+        adapter= new FirebaseRecyclerAdapter<addshoes, MyViewHolder2>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull MyViewHolder holder, int position, @NonNull addshoes model) {
+            protected void onBindViewHolder(@NonNull MyViewHolder2 holder, int position, @NonNull addshoes model) {
                 holder.textViewID.setText(""+model.getPrice());
                 holder.getTextViewName.setText(""+model.getBrand());
                 Picasso.get().load(model.getImage()).into(holder.profilePic);
@@ -49,21 +66,13 @@ public class Casualshoes extends AppCompatActivity {
 
             @NonNull
             @Override
-            public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.single_view_layout,parent,false);
-                return new MyViewHolder(v);
+            public MyViewHolder2 onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.admin_single_view_layout,parent,false);
+                return new MyViewHolder2(v);
             }
         };
         adapter.startListening();
         recyclerView.setAdapter(adapter);
 
-        text1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                Intent intent = new Intent(Casualshoes.this, userprofile.class);
-                startActivity(intent);
-            }
-        });
     }
 }
