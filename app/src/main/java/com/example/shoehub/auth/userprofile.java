@@ -26,6 +26,7 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.shoehub.R;
+import com.example.shoehub.feedback_u.feedback;
 import com.example.shoehub.home;
 import com.example.shoehub.models.User;
 import com.google.firebase.auth.FirebaseAuth;
@@ -42,7 +43,7 @@ public class userprofile extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     User userData;
     TextView email, username, phone, address;
-    Button homebtn;
+    Button homebtn ,fbtn;
 
 
     @Override
@@ -54,6 +55,7 @@ public class userprofile extends AppCompatActivity {
         phone = findViewById(R.id.user_phone);
         address = findViewById(R.id.user_address);
         homebtn = findViewById(R.id.profile_home_button);
+        fbtn = findViewById(R.id.feedback_button);
 
         firebaseAuth = FirebaseAuth.getInstance();
         String user = firebaseAuth.getCurrentUser().getUid();
@@ -84,6 +86,14 @@ public class userprofile extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent = new Intent(userprofile.this, home.class);
+                startActivity(intent);
+            }
+        });
+        fbtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(userprofile.this, feedback.class);
                 startActivity(intent);
             }
         });

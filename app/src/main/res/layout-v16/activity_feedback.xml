@@ -4,14 +4,14 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".editshoedetails"
-    android:background="@drawable/editshoedetails">
+    android:background="@color/GRAY"
+    tools:context=".editshoedetails">
 
 
     <EditText
         android:id="@+id/txtDescription"
-        android:layout_width="319sp"
-        android:layout_height="177sp"
+        android:layout_width="250sp"
+        android:layout_height="100sp"
         android:background="@drawable/input_feld"
 
         android:ems="10"
@@ -22,10 +22,10 @@
         android:textColorHint="@color/darkblue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.369"
+        app:layout_constraintHorizontal_bias="0.409"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.377" />
+        app:layout_constraintVertical_bias="0.461" />
 
     <Button
         android:id="@+id/submitFeedback"
@@ -35,7 +35,6 @@
         android:layout_marginLeft="16dp"
         android:layout_marginEnd="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginBottom="264dp"
         android:background="@drawable/buttonregister"
         android:fontFamily="@font/tahoma"
         android:text="SUBMIT"
@@ -44,10 +43,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.415"
+        app:layout_constraintHorizontal_bias="0.389"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/editTextTextPassword"
-        app:layout_constraintVertical_bias="0.146">
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.63">
 
     </Button>
 
@@ -56,19 +55,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Notes About Feedback *"
-        android:textColor="@color/white"
+        android:textColor="@color/lightgray"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.233"
+        app:layout_constraintHorizontal_bias="0.101"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.271" />
+        app:layout_constraintVertical_bias="0.369" />
 
     <EditText
         android:id="@+id/txtBrand"
-        android:layout_width="319sp"
-        android:layout_height="57sp"
+        android:layout_width="250sp"
+        android:layout_height="35sp"
         android:background="@drawable/input_feld"
         android:ems="10"
         android:gravity="center_horizontal"
@@ -78,39 +77,39 @@
         android:textColorHint="@color/darkblue"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.326"
+        app:layout_constraintHorizontal_bias="0.409"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.072" />
+        app:layout_constraintVertical_bias="0.185" />
 
     <TextView
         android:id="@+id/textView15"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="FEEDBACK"
-        android:textColor="@color/white"
+        android:textColor="#090909"
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.441"
+        app:layout_constraintHorizontal_bias="0.456"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.088" />
 
     <Spinner
         android:id="@+id/spinnerType"
-        android:layout_width="317dp"
+        android:layout_width="250dp"
         android:layout_height="34dp"
         android:background="@color/white"
         android:entries="@array/shoeType"
         android:gravity="center_horizontal"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/textView16"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.329"
+        app:layout_constraintHorizontal_bias="0.409"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtBrand"
-        app:layout_constraintVertical_bias="0.517" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.274" />
 
     <ListView
         android:id="@+id/listViewFeedback"
@@ -119,7 +118,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/submitFeedback"
-        app:layout_constraintVertical_bias="0.944" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.944"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
