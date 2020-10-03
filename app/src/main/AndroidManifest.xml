@@ -11,9 +11,13 @@
         android:theme="@style/AppTheme">
         <activity android:name=".auth.userprofile"></activity>
         <activity android:name=".casualshoes.add_casual_shoes"></activity>
+
         <activity android:name=".feedback_u.feedback"></activity>
         <activity android:name=".formalshoes.add_formal_shoes">
 
+
+
+        
 
 
         </activity>
@@ -42,8 +46,13 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
+
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
+
+                
 
         </activity>
     </application>
