@@ -148,7 +148,7 @@
             app:layout_constraintVertical_bias="0.409" />
 
         <EditText
-            android:id="@+id/formal_addp"
+            android:id="@+id/update_price"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
@@ -173,7 +173,7 @@
             app:srcCompat="@android:drawable/ic_input_add" />
 
         <Button
-            android:id="@+id/formal_submit"
+            android:id="@+id/update_upload"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:background="@color/colorPrimary"

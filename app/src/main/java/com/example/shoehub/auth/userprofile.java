@@ -25,8 +25,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import com.example.shoehub.R;
 import com.example.shoehub.feedback_u.feedback;
-import com.example.shoehub.auth.LoginActivity;
-import com.example.shoehub.home;
 import com.example.shoehub.models.User;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
