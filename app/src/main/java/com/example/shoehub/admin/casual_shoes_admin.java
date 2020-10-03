@@ -25,6 +25,7 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import com.example.shoehub.R;
 import com.example.shoehub.models.addshoes;
@@ -38,6 +39,7 @@ public class casual_shoes_admin extends AppCompatActivity {
 
     DatabaseReference ref;
     ImageView text1;
+    Button delete;
     private FirebaseRecyclerOptions<addshoes> options;
     private FirebaseRecyclerAdapter<addshoes, MyViewHolder2>adapter;
     private RecyclerView recyclerView;
@@ -47,6 +49,7 @@ public class casual_shoes_admin extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cashualshoesadmin);
         text1 = findViewById(R.id.formal_user_button);
+        delete =findViewById(R.id.Delete_button);
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
@@ -72,5 +75,9 @@ public class casual_shoes_admin extends AppCompatActivity {
         adapter.startListening();
         recyclerView.setAdapter(adapter);
 
+
     }
+
+
+
 }
