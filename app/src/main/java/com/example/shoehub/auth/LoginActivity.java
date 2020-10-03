@@ -33,7 +33,6 @@ import android.widget.ImageView;
 //}
 
 
-
 import androidx.annotation.NonNull;
 
 import android.content.Intent;
@@ -64,14 +63,14 @@ public class LoginActivity extends AppCompatActivity {
     ProgressBar progressBar;
     FirebaseAuth fauth;
     ImageView backbutton;
-    FirebaseDatabase database =FirebaseDatabase.getInstance();
+    FirebaseDatabase database = FirebaseDatabase.getInstance();
     FirebaseUser currentUser;
+
     @SuppressLint("WrongViewCast")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
-
 
 
         registerbtn = findViewById(R.id.regbutton);
@@ -91,75 +90,74 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
         backbutton.setOnClickListener(new View.OnClickListener() {
-           @Override
-           public void onClick(View view) {
+            @Override
+            public void onClick(View view) {
 
-          finish();
-           }
-       });
+                finish();
+            }
+        });
         loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 String email = lemail.getText().toString().trim();
                 String password = lpassword.getText().toString().trim();
 
-                if(TextUtils.isEmpty(email)){
+                if (TextUtils.isEmpty(email)) {
                     lemail.setError("email is required");
                     return;
                 }
-                if(TextUtils.isEmpty(password)){
+                if (TextUtils.isEmpty(password)) {
                     lpassword.setError("password is required");
                     return;
                 }
-                if(password.length()<6){
+                if (password.length() < 6) {
                     lpassword.setError("password must be 6 characters ");
                     return;
                 }
                 progressBar.setVisibility(View.VISIBLE);
                 Log.d("auth", "auth " + fauth.getUid());
                 // authenticate user
-                fauth.signInWithEmailAndPassword(email,password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
+                fauth.signInWithEmailAndPassword(email, password).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-                        if(task.isSuccessful()){
-                           DatabaseReference myref = database.getReference("user").child(fauth.getUid());
-                           myref.addValueEventListener(new ValueEventListener() {
-                               @Override
-                               public void onDataChange(@NonNull DataSnapshot snapshot) {
-                                   User u = snapshot.getValue(User.class);
-                                   String userRole = u.getRole();
-                                   Log.d("TAG","Value is:"+userRole);
-                                   if(userRole.equals("admin")){
-                                       Log.d("TAG","have user:"+userRole);
-                                       Intent intent = new Intent(LoginActivity.this, adminprofile.class);
-                                       startActivity(intent);
-                                     //  this.finish();
+                        if (task.isSuccessful()) {
+                            DatabaseReference myref = database.getReference("user").child(fauth.getUid());
+                            myref.addValueEventListener(new ValueEventListener() {
+                                @Override
+                                public void onDataChange(@NonNull DataSnapshot snapshot) {
+                                    User u = snapshot.getValue(User.class);
+                                    String userRole = u.getRole();
+                                    Log.d("TAG", "Value is:" + userRole);
+                                    if (userRole.equals("admin")) {
+                                        Log.d("TAG", "have user:" + userRole);
+                                        Intent intent = new Intent(LoginActivity.this, adminprofile.class);
+                                        startActivity(intent);
+                                        //  this.finish();
 
-                                   }
-                                   else if (userRole.equals("user")){
-                                       Intent intent = new Intent(LoginActivity.this, userprofile.class);
-                                       startActivity(intent);
-                                     //  this.finish();
+                                    } else if (userRole.equals("user")) {
+                                        Intent intent = new Intent(LoginActivity.this, userprofile.class);
+                                        startActivity(intent);
+                                        //  this.finish();
 
-                                   } else {
-                                       Log.d("auth" , "Something Wrong");
+                                    } else {
+                                        Log.d("auth", "Something Wrong");
 
-                                   }
+                                    }
 
-                               }
+                                }
 
 
-                               @Override
-                               public void onCancelled(@NonNull DatabaseError error) {
+                                @Override
+                                public void onCancelled(@NonNull DatabaseError error) {
 
-                               }
-                           });
+                                }
+                            });
 
-                          //  Toast.makeText(LoginActivity.this,"log in successfully", Toast.LENGTH_SHORT).show();
+                            //  Toast.makeText(LoginActivity.this,"log in successfully", Toast.LENGTH_SHORT).show();
                             //startActivity(new Intent(getApplicationContext(), userprofile.class));
-                        }else{
+                        } else {
 
-                            Toast.makeText(LoginActivity.this,"Error!"+task.getException().getMessage(),Toast.LENGTH_SHORT).show();
+                            Toast.makeText(LoginActivity.this, "Error!" + task.getException().getMessage(), Toast.LENGTH_SHORT).show();
                         }
 
 
@@ -171,23 +169,20 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
-
-
     }
 
-    public  void onDataChange(DataSnapshot dataSnapshot){
+    public void onDataChange(DataSnapshot dataSnapshot) {
 
         User u = dataSnapshot.getValue(User.class);
         String userRole = u.getRole();
-        Log.d("TAG","Value is:"+userRole);
-        if(userRole.equals("admin")){
-            Log.d("TAG","have user:"+userRole);
+        Log.d("TAG", "Value is:" + userRole);
+        if (userRole.equals("admin")) {
+            Log.d("TAG", "have user:" + userRole);
             Intent intent = new Intent(LoginActivity.this, adminprofile.class);
             startActivity(intent);
             this.finish();
 
-        }
-        else{
+        } else {
             Intent intent = new Intent(LoginActivity.this, userprofile.class);
             startActivity(intent);
             this.finish();
