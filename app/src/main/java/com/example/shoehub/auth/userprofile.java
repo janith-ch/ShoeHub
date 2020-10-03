@@ -17,16 +17,15 @@ package com.example.shoehub.auth;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
-
 import com.example.shoehub.R;
 import com.example.shoehub.feedback_u.feedback;
+import com.example.shoehub.auth.LoginActivity;
 import com.example.shoehub.home;
 import com.example.shoehub.models.User;
 import com.google.firebase.auth.FirebaseAuth;
@@ -43,7 +42,7 @@ public class userprofile extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     User userData;
     TextView email, username, phone, address;
-    Button homebtn ,fbtn;
+    Button homebtn ,fbtn,logout;
 
 
     @Override
@@ -56,6 +55,7 @@ public class userprofile extends AppCompatActivity {
         address = findViewById(R.id.user_address);
         homebtn = findViewById(R.id.profile_home_button);
         fbtn = findViewById(R.id.feedback_button);
+        logout = findViewById(R.id.user_logout);
 
         firebaseAuth = FirebaseAuth.getInstance();
         String user = firebaseAuth.getCurrentUser().getUid();
@@ -93,11 +93,23 @@ public class userprofile extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+
                 Intent intent = new Intent(userprofile.this, feedback.class);
+                startActivity(intent);
+            }
+        });
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                 FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(userprofile.this, LoginActivity.class);
                 startActivity(intent);
             }
         });
 
 
     }
+
+
 }
