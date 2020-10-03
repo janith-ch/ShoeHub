@@ -16,7 +16,7 @@
         android:layout_margin="20dp">
 
         <TextView
-            android:id="@+id/AtextView2ID"
+            android:id="@+id/AtextView2ID_formal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="128dp"
@@ -31,7 +31,7 @@
             app:layout_constraintVertical_bias="0.508" />
 
         <TextView
-            android:id="@+id/AtextView1ID"
+            android:id="@+id/AtextView1ID_formal"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="128dp"
@@ -46,7 +46,7 @@
             app:layout_constraintVertical_bias="0.0" />
 
         <ImageView
-            android:id="@+id/Acard_image"
+            android:id="@+id/Acard_image_formal"
             android:layout_width="52dp"
             android:layout_height="46dp"
             android:layout_marginTop="8dp"
@@ -96,7 +96,7 @@
             android:text="price"
             android:textColor="#070707"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/AtextView1ID"
+            app:layout_constraintEnd_toStartOf="@+id/AtextView1ID_formal"
             app:layout_constraintHorizontal_bias="0.357"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -109,7 +109,7 @@
             android:text="brand"
             android:textColor="#070707"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/AtextView1ID"
+            app:layout_constraintEnd_toStartOf="@+id/AtextView1ID_formal"
             app:layout_constraintHorizontal_bias="0.36"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
