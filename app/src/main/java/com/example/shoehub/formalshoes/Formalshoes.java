@@ -1,4 +1,4 @@
-package com.example.shoehub.casualshoes;
+package com.example.shoehub.formalshoes;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -19,29 +19,29 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
 
-public class Casualshoes extends AppCompatActivity {
+public class Formalshoes extends AppCompatActivity {
 
     DatabaseReference ref;
     ImageView text1;
     private FirebaseRecyclerOptions<addshoes> options;
-    private FirebaseRecyclerAdapter<addshoes, MyViewHolder>adapter;
+    private FirebaseRecyclerAdapter<addshoes, MyViewHolderFormal>adapter;
     private RecyclerView recyclerView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cashualshoe);
-         text1 = findViewById(R.id.formal_user_button);
+        setContentView(R.layout.activity_formalshoe);
+        text1 = findViewById(R.id.formal_user_button);
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
-        ref = FirebaseDatabase.getInstance().getReference("member");
+        ref = FirebaseDatabase.getInstance().getReference("formal");
 
         options = new FirebaseRecyclerOptions.Builder<addshoes>().setQuery(ref,addshoes.class).build();
-        adapter= new FirebaseRecyclerAdapter<addshoes, MyViewHolder>(options) {
+        adapter= new FirebaseRecyclerAdapter<addshoes, MyViewHolderFormal>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull MyViewHolder holder, int position, @NonNull addshoes model) {
+            protected void onBindViewHolder(@NonNull MyViewHolderFormal holder, int position, @NonNull addshoes model) {
                 holder.textViewID.setText(""+model.getPrice());
                 holder.getTextViewName.setText(""+model.getBrand());
                 Picasso.get().load(model.getImage()).into(holder.profilePic);
@@ -49,9 +49,9 @@ public class Casualshoes extends AppCompatActivity {
 
             @NonNull
             @Override
-            public MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.single_view_layout,parent,false);
-                return new MyViewHolder(v);
+            public MyViewHolderFormal onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
+                View v = LayoutInflater.from(parent.getContext()).inflate(R.layout.single_view_layout_formal,parent,false);
+                return new MyViewHolderFormal(v);
             }
         };
         adapter.startListening();
@@ -61,7 +61,7 @@ public class Casualshoes extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
-                Intent intent = new Intent(Casualshoes.this, userprofile.class);
+                Intent intent = new Intent(com.example.shoehub.formalshoes.Formalshoes.this, userprofile.class);
                 startActivity(intent);
             }
         });

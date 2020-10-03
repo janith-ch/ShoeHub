@@ -11,18 +11,26 @@
         android:theme="@style/AppTheme">
         <activity android:name=".auth.userprofile"></activity>
         <activity android:name=".casualshoes.add_casual_shoes"></activity>
-        <activity android:name=".feedback_u.feedback">
+
+        <activity android:name=".feedback_u.feedback"></activity>
+        <activity android:name=".formalshoes.add_formal_shoes">
+
+
+
+        
+
 
         </activity>
+        <activity android:name=".formalshoes.Formalshoes">
 
-        <activity android:name=".editshoedetails" />
+
+        </activity>
         <activity android:name=".admin.casual_shoes_admin" />
-        <activity android:name=".formalshoe" />
         <activity android:name=".alterstok" />
         <activity android:name=".admin.adminprofile" />
         <activity android:name=".cart" />
-        <activity android:name=".fotmalshoe" />
         <activity android:name=".casualshoes.Casualshoes">
+
 <!--            <intent-filter>-->
 <!--                <action android:name="android.intent.action.MAIN" />-->
 
@@ -31,7 +39,6 @@
 <!--            </intent-filter>-->
 
         </activity>
-        <activity android:name=".selectyourshoe" />
         <activity android:name=".home" />
         <activity android:name=".auth.Activity_Register" />
         <activity android:name=".auth.LoginActivity" />
@@ -39,9 +46,13 @@
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
+
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
+
+                
 
         </activity>
     </application>

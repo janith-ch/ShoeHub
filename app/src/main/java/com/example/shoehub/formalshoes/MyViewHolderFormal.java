@@ -1,5 +1,7 @@
-package com.example.shoehub.admin;
+package com.example.shoehub.formalshoes;
 
+//public class MyViewHolderFormal {
+//}
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -9,10 +11,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.shoehub.R;
 
-public class MyViewHolder2 extends RecyclerView.ViewHolder {
+public class MyViewHolderFormal extends RecyclerView.ViewHolder {
     TextView textViewID,getTextViewName;
     ImageView profilePic;
-    public MyViewHolder2(@NonNull View itemView) {
+    public MyViewHolderFormal(@NonNull View itemView) {
         super(itemView);
         textViewID=itemView.findViewById(R.id.AtextView1ID_formal);
         getTextViewName=itemView.findViewById(R.id.AtextView2ID_formal);

@@ -10,10 +10,11 @@ import android.widget.ImageView;
 
 import com.example.shoehub.auth.userprofile;
 import com.example.shoehub.casualshoes.Casualshoes;
+import com.example.shoehub.formalshoes.Formalshoes;
 
 public class home extends AppCompatActivity {
     ImageView img1;
-    Button casual_btn;
+    Button casual_btn,formal_btn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +23,7 @@ public class home extends AppCompatActivity {
         setContentView(R.layout.activity_home);
         img1 = findViewById(R.id.home_user_btn);
         casual_btn = findViewById(R.id.casual_shoe_btn);
+        formal_btn = findViewById(R.id.formal_button);
         img1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -36,6 +38,15 @@ public class home extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent = new Intent(home.this, Casualshoes.class);
+                startActivity(intent);
+            }
+        });
+
+        formal_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(home.this, Formalshoes.class);
                 startActivity(intent);
             }
         });
