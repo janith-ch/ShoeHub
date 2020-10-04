@@ -61,7 +61,7 @@ public class userprofile extends AppCompatActivity {
     User userData;
 
     TextView email, username, phone, address,password;
-    Button homebtn ,fbtn,changeproimage;//3
+    Button homebtn ,fbtn,changeproimage,logout;//3
 
     //zz
     ImageView profileimage;//1

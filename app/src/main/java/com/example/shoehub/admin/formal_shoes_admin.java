@@ -1,5 +1,21 @@
 package com.example.shoehub.admin;
 
+//import androidx.appcompat.app.AppCompatActivity;
+//
+//import android.os.Bundle;
+//
+//import com.example.shoehub.R;
+//
+//public class formal_shoes_admin extends AppCompatActivity {
+//
+//    @Override
+//    protected void onCreate(Bundle savedInstanceState) {
+//        super.onCreate(savedInstanceState);
+//        setContentView(R.layout.activity_formal_shoes_admin);
+//    }
+//}
+
+
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -24,7 +40,7 @@ import com.squareup.picasso.Picasso;
 import java.util.ArrayList;
 import java.util.List;
 
-public class casual_shoes_admin extends AppCompatActivity {
+public class formal_shoes_admin extends AppCompatActivity {
 
     DatabaseReference ref;
     ImageView text1;
@@ -37,7 +53,7 @@ public class casual_shoes_admin extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_cashualshoesadmin);
+        setContentView(R.layout.activity_formal_shoes_admin);
         text1 = findViewById(R.id.formal_user_button);
         delete =findViewById(R.id.Delete_button);
         update = findViewById(R.id.update_button);
@@ -46,7 +62,7 @@ public class casual_shoes_admin extends AppCompatActivity {
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
 
-        ref = FirebaseDatabase.getInstance().getReference("member");
+        ref = FirebaseDatabase.getInstance().getReference("formal");
 
         options = new FirebaseRecyclerOptions.Builder<addshoes>().setQuery(ref,addshoes.class).build();
         adapter= new FirebaseRecyclerAdapter<addshoes, MyViewHolder2>(options) {
@@ -62,7 +78,7 @@ public class casual_shoes_admin extends AppCompatActivity {
                         addshoes = new ArrayList<>();
                         addshoes.add(model);
 
-                        Intent intent = new Intent(casual_shoes_admin.this, editCashualShoes.class);
+                        Intent intent = new Intent(formal_shoes_admin.this, editCashualShoes.class);
                         intent.putExtra("test",price1);
                         intent.putExtra("test1",brand1);
                         startActivity(intent);

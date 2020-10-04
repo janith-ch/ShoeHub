@@ -49,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
 
 
         registerbtn = findViewById(R.id.regbutton);
-        loginbtn = findViewById(R.id.casual_shoe_btn);
+        loginbtn = findViewById(R.id.admin_casual_shoe_btn);
         lemail = findViewById(R.id.username);
         lpassword = findViewById(R.id.password);
         progressBar = findViewById(R.id.progressBar);

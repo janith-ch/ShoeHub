@@ -49,7 +49,7 @@
 
     <androidx.recyclerview.widget.RecyclerView
 
-        android:id="@+id/recyclerView"
+        android:id="@+id/recyclerView_formal"
         android:layout_width="359dp"
         android:layout_height="423dp"
         app:layout_constraintBottom_toBottomOf="parent"
