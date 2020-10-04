@@ -1,4 +1,4 @@
-package com.example.shoehub;
+package com.example.shoehub.auth;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -8,7 +8,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 
-import com.example.shoehub.auth.userprofile;
+import com.example.shoehub.R;
 import com.example.shoehub.casualshoes.Casualshoes;
 import com.example.shoehub.formalshoes.Formalshoes;
 

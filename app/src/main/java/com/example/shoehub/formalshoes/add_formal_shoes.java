@@ -46,10 +46,10 @@ public class add_formal_shoes extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_formal_shoes);
         StorageRef = FirebaseStorage.getInstance().getReference("images");
-        price = findViewById(R.id.formal_addp);
+        price = findViewById(R.id.update_price);
         brand = findViewById(R.id.formal_addb);
         description = findViewById(R.id.formal_addd);
-        submit = findViewById(R.id.formal_submit);
+        submit = findViewById(R.id.update_upload);
         shoeMember=new addshoes();
         chooes = findViewById(R.id.formal_submit2);
         img = findViewById(R.id.formal_addimg);
