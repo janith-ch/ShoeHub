@@ -20,8 +20,5 @@ public class MyViewHolder2 extends RecyclerView.ViewHolder {
         profilePic = itemView.findViewById(R.id.Acard_image_formal);
         update = itemView.findViewById(R.id.update_button);
 
-
-
-
     }
 }
