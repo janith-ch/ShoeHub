@@ -16,7 +16,7 @@
         android:layout_margin="20dp">
 
         <TextView
-            android:id="@+id/AtextView2ID_formal"
+            android:id="@+id/update_brand_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="128dp"
@@ -60,7 +60,7 @@
             tools:srcCompat="@tools:sample/avatars" />
 
         <Button
-            android:id="@+id/add_cart"
+            android:id="@+id/update_button"
             android:layout_width="100dp"
             android:layout_height="30dp"
             android:background="@color/design_default_color_secondary_variant"
@@ -75,7 +75,7 @@
             app:layout_constraintVertical_bias="1.0" />
 
         <Button
-            android:id="@+id/add_cart2"
+            android:id="@+id/Delete_button"
             android:layout_width="100dp"
             android:layout_height="30dp"
             android:background="@color/design_default_color_error"

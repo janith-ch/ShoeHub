@@ -21,44 +21,69 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.ImageView;
 import com.example.shoehub.R;
+import com.example.shoehub.casualshoes.editCashualShoes;
 import com.example.shoehub.models.addshoes;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.firebase.ui.database.FirebaseRecyclerOptions;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.squareup.picasso.Picasso;
+import java.util.ArrayList;
+import java.util.List;
 
 public class casual_shoes_admin extends AppCompatActivity {
 
     DatabaseReference ref;
     ImageView text1;
+    Button delete,update;
     private FirebaseRecyclerOptions<addshoes> options;
     private FirebaseRecyclerAdapter<addshoes, MyViewHolder2>adapter;
     private RecyclerView recyclerView;
+    public static List<addshoes> addshoes,keylist;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cashualshoesadmin);
         text1 = findViewById(R.id.formal_user_button);
+        delete =findViewById(R.id.Delete_button);
+        update = findViewById(R.id.update_button);
         recyclerView = findViewById(R.id.recyclerView);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
+
 
         ref = FirebaseDatabase.getInstance().getReference("member");
 
         options = new FirebaseRecyclerOptions.Builder<addshoes>().setQuery(ref,addshoes.class).build();
         adapter= new FirebaseRecyclerAdapter<addshoes, MyViewHolder2>(options) {
             @Override
-            protected void onBindViewHolder(@NonNull MyViewHolder2 holder, int position, @NonNull addshoes model) {
+            protected void onBindViewHolder(@NonNull MyViewHolder2 holder, int position, @NonNull final addshoes model) {
                 holder.textViewID.setText(""+model.getPrice());
                 holder.getTextViewName.setText(""+model.getBrand());
+                final String price1= model.getPrice();
+                final String brand1= model.getBrand();
+                holder.update.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        addshoes = new ArrayList<>();
+                        addshoes.add(model);
+
+                        Intent intent = new Intent(casual_shoes_admin.this, editCashualShoes.class);
+                        intent.putExtra("test",price1);
+                        intent.putExtra("test1",brand1);
+                        startActivity(intent);
+                    }
+                });
+
                 Picasso.get().load(model.getImage()).into(holder.profilePic);
             }
 
@@ -72,5 +97,9 @@ public class casual_shoes_admin extends AppCompatActivity {
         adapter.startListening();
         recyclerView.setAdapter(adapter);
 
+
     }
+
+
+
 }

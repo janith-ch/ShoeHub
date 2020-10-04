@@ -19,7 +19,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
+
 import android.app.Activity;
+
+
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
@@ -29,11 +32,13 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
+
 import android.widget.Toast;
+
+
 
 import com.example.shoehub.R;
 import com.example.shoehub.feedback_u.feedback;
-import com.example.shoehub.home;
 import com.example.shoehub.models.User;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -54,6 +59,7 @@ public class userprofile extends AppCompatActivity {
     DatabaseReference ref;
     FirebaseAuth fAuth;
     User userData;
+
     TextView email, username, phone, address,password;
     Button homebtn ,fbtn,changeproimage;//3
 
@@ -61,6 +67,7 @@ public class userprofile extends AppCompatActivity {
     ImageView profileimage;//1
     StorageReference storageReference;
     FirebaseStorage fStore;
+
 
 
     @Override
@@ -75,6 +82,7 @@ public class userprofile extends AppCompatActivity {
         password = findViewById(R.id.password);
         homebtn = findViewById(R.id.profile_home_button);
         fbtn = findViewById(R.id.feedback_button);
+        logout = findViewById(R.id.user_logout);
 
         //zz
         profileimage = findViewById(R.id.profileimage);//2
@@ -127,7 +135,17 @@ public class userprofile extends AppCompatActivity {
             @Override
             public void onClick(View view) {
 
+
                 Intent intent = new Intent(userprofile.this, feedback.class);
+                startActivity(intent);
+            }
+        });
+        logout.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                 FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(userprofile.this, LoginActivity.class);
                 startActivity(intent);
             }
         });
@@ -204,4 +222,6 @@ public class userprofile extends AppCompatActivity {
         });
 
     }
+
+
 }
