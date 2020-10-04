@@ -8,31 +8,6 @@ import android.util.Log;
 import android.view.View;
 import android.widget.ImageView;
 
-//public class LoginActivity extends AppCompatActivity {
-//
-//    ImageView backbutton;
-//
-//    @SuppressLint("WrongViewCast")
-//    @Override
-//    protected void onCreate(Bundle savedInstanceState) {
-//        super.onCreate(savedInstanceState);
-//        setContentView(R.layout.activity_login);
-//
-//        backbutton = findViewById(R.id.backbtn);
-//
-//        backbutton.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//            finish();
-//
-//            }
-//        });
-//
-//    }
-//}
-
-
 import androidx.annotation.NonNull;
 
 import android.content.Intent;
