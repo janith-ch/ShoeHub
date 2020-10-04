@@ -17,7 +17,7 @@ public class MyViewHolderFormal extends RecyclerView.ViewHolder {
     public MyViewHolderFormal(@NonNull View itemView) {
         super(itemView);
         textViewID=itemView.findViewById(R.id.AtextView1ID_formal);
-        getTextViewName=itemView.findViewById(R.id.update_brand);
+        getTextViewName=itemView.findViewById(R.id.update_brand_text);
         profilePic = itemView.findViewById(R.id.Acard_image_formal);
 
 
