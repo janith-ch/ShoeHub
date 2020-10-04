@@ -37,7 +37,7 @@ public class Activity_Register extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity__register);
         rloginbtn = findViewById(R.id.reg_login_button);
-        submitbtn = findViewById(R.id.casual_shoe_btn);
+        submitbtn = findViewById(R.id.admin_casual_shoe_btn);
         rname = findViewById(R.id.username);
         remail = findViewById(R.id.email);
         rphone = findViewById(R.id.phone);

@@ -22,8 +22,8 @@ public class home extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_home);
         img1 = findViewById(R.id.home_user_btn);
-        casual_btn = findViewById(R.id.casual_shoe_btn);
-        formal_btn = findViewById(R.id.formal_button);
+        casual_btn = findViewById(R.id.admin_casual_shoe_btn);
+        formal_btn = findViewById(R.id.admin_formal_button);
         img1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

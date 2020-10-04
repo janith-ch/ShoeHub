@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/GRAY"
-    tools:context=".auth.home">
+    tools:context=".admin.admin_home">
+
 
 
     <ImageView
@@ -82,9 +82,9 @@
         android:id="@+id/textView7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Enter the biggest  online shoes store"
+        android:text="STOCK"
         android:textColor="#020202"
-        android:textSize="14sp"
+        android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"

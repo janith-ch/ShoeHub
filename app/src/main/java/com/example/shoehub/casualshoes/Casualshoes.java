@@ -32,7 +32,7 @@ public class Casualshoes extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_cashualshoe);
          text1 = findViewById(R.id.formal_user_button);
-        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView = findViewById(R.id.recyclerView_formal);
         recyclerView.setHasFixedSize(true);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
 
