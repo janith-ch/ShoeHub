@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/GRAY"
+    android:background="@drawable/newbggttt"
     tools:context=".editshoedetails">
 
 
@@ -12,14 +12,14 @@
         android:id="@+id/txtDescription"
         android:layout_width="250sp"
         android:layout_height="100sp"
-        android:background="@drawable/input_feld"
 
+        android:background="@color/lightgray"
         android:ems="10"
         android:gravity="center"
         android:hint="Enter Your Suggestion"
         android:inputType="textPersonName"
         android:textAlignment="center"
-        android:textColorHint="@color/darkblue"
+        android:textColorHint="@color/colorwhite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.409"
@@ -31,11 +31,7 @@
         android:id="@+id/submitFeedback"
         android:layout_width="184sp"
         android:layout_height="60sp"
-        android:layout_marginStart="16dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginRight="16dp"
-        android:background="@drawable/buttonregister"
+        android:background="@color/design_default_color_primary_dark"
         android:fontFamily="@font/tahoma"
         android:text="SUBMIT"
         android:textAllCaps="false"
@@ -43,10 +39,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.389"
+        app:layout_constraintHorizontal_bias="0.436"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.63">
+        app:layout_constraintVertical_bias="0.643">
 
     </Button>
 
@@ -68,13 +64,13 @@
         android:id="@+id/txtBrand"
         android:layout_width="250sp"
         android:layout_height="35sp"
-        android:background="@drawable/input_feld"
+        android:background="@color/lightgray"
         android:ems="10"
         android:gravity="center_horizontal"
         android:hint="Shoe Brand"
         android:inputType="textPersonName"
         android:textAlignment="center"
-        android:textColorHint="@color/darkblue"
+        android:textColorHint="@color/colorwhite"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.409"
@@ -91,16 +87,16 @@
         android:textSize="30sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.456"
+        app:layout_constraintHorizontal_bias="0.448"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.088" />
+        app:layout_constraintVertical_bias="0.07" />
 
     <Spinner
         android:id="@+id/spinnerType"
         android:layout_width="250dp"
         android:layout_height="34dp"
-        android:background="@color/white"
+        android:background="@color/lightgray"
         android:entries="@array/shoeType"
         android:gravity="center_horizontal"
         android:textAlignment="center"
@@ -119,7 +115,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.944"
-        />
+        app:layout_constraintVertical_bias="0.944" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

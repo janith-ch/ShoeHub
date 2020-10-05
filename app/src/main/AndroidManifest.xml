@@ -10,6 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+
         <activity android:name=".socks.socks" />
         <activity android:name=".socks.editSocks" >
 
@@ -19,13 +20,10 @@
 
         </activity>
         <activity android:name=".admin.sock_admin" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
+           
 
         </activity>
+
         <activity android:name=".admin.admin_home" />
         <activity android:name=".admin.formal_shoes_admin" />
 
@@ -41,7 +39,14 @@
         <activity android:name=".auth.Activity_Register" />
         <activity android:name=".auth.LoginActivity" />
         <activity android:name=".auth.MainActivity" />
-        <activity android:name=".animation.Animation">
+
+        <activity android:name=".animation.Animation" >
+          
+         <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
 
         </activity>
     </application>
