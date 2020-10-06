@@ -9,6 +9,23 @@
 
 
     <Button
+        android:id="@+id/admin_home_socks"
+        android:layout_width="250sp"
+        android:layout_height="54sp"
+        android:background="@drawable/buttonregister"
+        android:fontFamily="@font/tahoma"
+        android:text="SOCKS"
+        android:textAllCaps="false"
+        android:textColor="@color/white"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.403"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.347" />
+
+    <Button
         android:id="@+id/admin_casual_shoe_btn"
         android:layout_width="250sp"
         android:layout_height="54sp"
@@ -23,7 +40,7 @@
         app:layout_constraintHorizontal_bias="0.403"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.437" />
+        app:layout_constraintVertical_bias="0.499" />
 
     <Button
         android:id="@+id/admin_formal_button"

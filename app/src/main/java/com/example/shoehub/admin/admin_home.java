@@ -8,10 +8,11 @@ import android.view.View;
 import android.widget.Button;
 
 import com.example.shoehub.R;
+import com.example.shoehub.socks.editSocks;
 
 public class admin_home extends AppCompatActivity {
 
-    Button formal,casual;
+    Button formal,casual,sock;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +20,7 @@ public class admin_home extends AppCompatActivity {
         setContentView(R.layout.activity_admin_home);
         casual = findViewById(R.id.admin_casual_shoe_btn);
         formal = findViewById(R.id.admin_formal_button);
+        sock = findViewById(R.id.admin_home_socks);
 
 
         casual.setOnClickListener(new View.OnClickListener() {
@@ -36,6 +38,14 @@ public class admin_home extends AppCompatActivity {
             public void onClick(View view) {
 
                 Intent intent = new Intent(admin_home.this, formal_shoes_admin.class);
+                startActivity(intent);
+            }
+        });
+        sock.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent(admin_home.this, sock_admin.class);
                 startActivity(intent);
             }
         });

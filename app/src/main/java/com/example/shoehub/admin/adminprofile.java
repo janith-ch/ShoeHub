@@ -15,6 +15,7 @@ import com.example.shoehub.auth.LoginActivity;
 import com.example.shoehub.casualshoes.add_casual_shoes;
 import com.example.shoehub.formalshoes.add_formal_shoes;
 import com.example.shoehub.models.User;
+import com.example.shoehub.socks.addSocks;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -28,7 +29,7 @@ public class adminprofile extends AppCompatActivity {
     FirebaseAuth firebaseAuth;
     User userData;
     TextView email, username;
-    Button addcasual,stockbtn,logout,addformal;
+    Button addcasual,stockbtn,logout,addformal,addsocks;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,6 +41,7 @@ public class adminprofile extends AppCompatActivity {
         stockbtn = findViewById(R.id.admin_View_button);
         logout = findViewById(R.id.admin_logout);
         addformal=findViewById(R.id.add_formal_admin);
+        addsocks = findViewById(R.id.admin_add_socks);
 
 
         firebaseAuth = FirebaseAuth.getInstance();
@@ -95,6 +97,15 @@ public class adminprofile extends AppCompatActivity {
 
                 FirebaseAuth.getInstance().signOut();
                 Intent intent = new Intent(adminprofile.this, add_formal_shoes.class);
+                startActivity(intent);
+            }
+        });
+        addsocks.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                FirebaseAuth.getInstance().signOut();
+                Intent intent = new Intent(adminprofile.this, addSocks.class);
                 startActivity(intent);
             }
         });

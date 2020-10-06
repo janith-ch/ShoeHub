@@ -1,9 +1,9 @@
 package com.example.shoehub.casualshoes;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,10 +11,10 @@ import android.widget.Toast;
 
 import com.example.shoehub.R;
 import com.example.shoehub.admin.casual_shoes_admin;
-import com.example.shoehub.auth.LoginActivity;
 import com.example.shoehub.models.addshoes;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+
 public class editCashualShoes extends AppCompatActivity {
     EditText updatex, updateb;
     Button buttonup;
@@ -50,8 +50,8 @@ public class editCashualShoes extends AppCompatActivity {
                 addshoes.setBrand(brandb);
 
                 databaseReference.child(addshoes.getDescription()).setValue(addshoes);
-                Log.d("auth", "updated");
 
+                Toast.makeText(editCashualShoes.this, " updated successfully", Toast.LENGTH_LONG).show();
             }
         });
 
